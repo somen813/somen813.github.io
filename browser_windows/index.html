@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Font Awesomeのバージョン設定（最新バージョンがでたらこっちも最新にする。しないと使えなくなる。）-->
+	<script src="https://kit.fontawesome.com/4a5ae3f5ce.js" crossorigin="anonymous"></script>
+  <title>Windows for browser</title>
+  <link href="base.css" rel="stylesheet" type="text/css">
+  <script src="appsdeta.js"></script>
+  <script src="base.js" defer></script>
+</head>
+<body>
+  <input id="inputFile" type="file" accept=".png, .jpg, .webp">
+  <div class="startMenu">
+    <div class="topPart">
+      <input type="text" placeholder="アプリを検索" id="startMenuSearchBox" class="searhBox">
+      <div class="pinned">
+        <p>ピン留め済み</p>
+      </div>
+    </div>
+    <div class="lowerPart">
+      <div class="user">
+        <p class="userName"></p>
+      </div>
+      <button type="button" id="lowerPartSettting">
+        <i class="fa-solid fa-gear"></i>
+      </button>
+      <button type="button" id="powerSupply">
+        <i class="fa-solid fa-power-off"></i>
+      </button>
+      <div class="powerSupplyMenu">
+        <button type="button" id="lock" class="powerSupplyMenuButton">
+          ロック
+        </button>
+        <button type="button" id="powerOff" class="powerSupplyMenuButton">
+          シャットダウン
+        </button>
+        <button type="button" id="reboot" class="powerSupplyMenuButton">
+          再起動
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="searchMenu">
+  </div>
+  <div class="calendarBox">
+    <p class="calendarYearMonth">2024年6月</p>
+    <table class="calendar">
+      <tr class="calendarDay">
+        <th>日</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th>土</th>
+      </tr>
+    </table>
+  </div>
+  <div id="taskBar">
+    <button type="button" id="start">
+      <i class="fa-brands fa-windows"></i>
+    </button>
+    <button type="button" id="search">
+      <i class="fa-solid fa-magnifying-glass"></i>検索
+    </button>
+    <div id="appsIcon">
+    </div>
+    <button type="button" id="clock">
+      <p id="time"></p>
+      <p id="date"></p>
+    </button>
+  </div>
+  <div id="desktop">
+  </div>
+  <img id="wallpaper" src="wallpaper.png" alt="壁紙" draggable="false">
+</body>
+</html>

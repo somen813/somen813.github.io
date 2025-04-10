@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+:root {
+  --taskbarClor: rgba(240, 248, 255, 80%);
+  --taskbarBlur: blur(20px);
+}
+
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+#wallpaper {
+  user-select: none;
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: -100;
+  width: 100vw;
+  height: auto;
+}
+#taskBar {
+  position: fixed;
+  display: flex;
+  gap: 10px;
+  inset: auto 0 0 0;
+  z-index: 1000;
+  height: 50px;
+  padding: 0 0 0 10px;
+  background-color: var(--taskbarClor);
+  backdrop-filter: var(--taskbarBlur);
+}
+#startBox {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: flex;
+  gap: 10px;
+  margin: 0 10px;
+}
+#start {
+  height: 40px;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  margin: 5px 0;
+  border: none;
+  border-radius: 7px;
+  background-color: transparent;
+  color: rgb(33, 158, 230);
+  transition: all .2s;
+}
+#start:hover {
+  box-shadow: 0 0 10px -4px #666666;
+}
+#start:active {
+  transform: scale(.85);
+}
+.startMenu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: -750px;
+  z-index: 500;
+  width: 600px;
+  height: 700px;
+  padding: 0;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px -5px #444444;
+  background-color: var(--taskbarClor);
+  backdrop-filter: var(--taskbarBlur);
+  transition: bottom .3s, background-color .3s;
+}
+.startMenuOpen {
+  bottom: 50px;
+}
+.searhBox {
+  outline: none;
+  padding: 0 15px;
+  border: none;
+  height: 30px;
+  font-size: auto;
+  border-radius: 15px;
+}
+.topPart {
+  padding: 50px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.lowerPart {
+  height: 50px;
+  padding: 20px 50px;
+}
+.pinned {
+  flex-grow: 1;
+  margin: 30px;
+}
+.powerSupplyMenu {
+  visibility: collapse;
+  width: 150px;
+  aspect-ratio: 5/4;
+  border-radius: 10px;
+  background-color: var(--taskbarClor);
+  box-shadow: 0px 0px 15px -5px #444;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+.powerSupplyMenuOpen {
+  opacity: 1;
+  visibility: visible;
+}
+.powerSupplyMenuButton {
+  flex-grow: 1;
+  border: none;
+  background-color: transparent;
+}
+#search {
+  height: 30px;
+  padding: 5px 30px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  background-color: #ececec;
+  transition: all .2s;
+  letter-spacing: 0.1em;
+}
+#search:hover {
+  box-shadow: 0 0 10px -4px #666666;
+}
+.searchMenu {
+  position: fixed;
+  bottom: -750px;
+  z-index: 500;
+  width: min( 35vw, 600px);
+  aspect-ratio: 6 / 7;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px -5px #444444;
+  background-color: var(--taskbarClor);
+  backdrop-filter: var(--taskbarBlur);
+  transition: bottom .3s, background-color .3s;
+  overflow-y: scroll;
+}
+.searchMenuOpen {
+  bottom: 50px;
+}
+#searchBox {
+  outline: none;
+}
+#clock {
+  height: 44px;
+  margin: 3px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  letter-spacing: .03em;
+  transition: all .2s;
+}
+#clock:hover {
+  box-shadow: 0 0 10px -4px #666666;
+}
+#clock:active {
+  transform: scale(.95);
+}
+.calendar {
+  position: fixed;
+  right: -20vw;
+  bottom: 50px;
+  width: min( 20vw, 300px);
+  aspect-ratio: 4/5;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: var(--taskbarClor);
+  backdrop-filter: var(--taskbarBlur);
+  transition: right .3s, background-color .3s;
+}
+.calendarOpen {
+  right: 0;
+}
+#clock p {
+  margin: auto 0;
+}
+#time {
+  text-align: right;
+}
+.fa-windows {
+  font-size: 25px;
+}
+#appsIcon {
+  flex-grow: 1;
+}
+
+.appsWindow {
+  width: 400px;
+  aspect-ratio: 1/1;
+  background-color: #444444;
+}
