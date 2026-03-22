@@ -2,88 +2,197 @@
 
 /* フォントのインポート */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=arrow_menu_close,arrow_menu_open,link');
 /* .noto-sans-jp-<uniquifier> {
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
 } */
-
-html {
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	font-family: 'Noto Sans JP', sans-serif;
-
-	font-optical-sizing: auto;
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0,
+	'wght' 400,
+	'GRAD' 0,
+	'opsz' 48;
 }
 
-body {
-	position: relative;
-	width: 100%;
-	min-height: 100vh;
-	margin: 0;
-	padding: 0;
-	background-color: #dcdcdc;
+:root {
+	--bodyMargin: 15px;
 }
 
-#headerMenu {
-	position: fixed;
-	top: 50%;
-	right: 0;
-	transform: translate(0, -50%);
-	width: 20vw;
-	max-width: 300px;
-	height: 60vh;
-	margin: 0;
-	padding: 20px;
-	border-radius: 50px 0 0 50px;
-	box-shadow: 0 0 20px 5px #acacac;
-	background-color: #387bb2;
-	color: white;
+@media screen and (max-width: 640px) {
+	html {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		font-family: 'Noto Sans JP', sans-serif;
+
+		font-optical-sizing: auto;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		margin: 0;
+		padding: 0;
+		background-color: #dcdcdc;
+	}
+
+
+	#headerMenu {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;
+		width: max(260px);
+		margin: 0;
+		box-shadow: 0 0 20px 5px #acacac;
+		background-color: #387bb2;
+		color: white;
+	}
+	#headerToggle {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		width: 40px;
+		height: 40px;
+	}
+
+	#headerMenuList {
+		list-style: none;
+		width: 100%;
+		margin: 10px auto;
+		padding: 0;
+	}
+	#headerMenuList li {
+		margin: 10px 0;
+		padding: 10px;
+		font-size: 1.5rem;
+	}
+	#headerMenuList li a {
+		color: white;
+		text-decoration: none;
+	}
+	#shareBtnBox {
+		width: calc(100% - 60px);
+		margin: 10px auto 0 auto;
+		padding: 10px 30px;
+		border-radius: 25px;
+		background-color: white;
+		color: black;
+	}
+	#shareBtnTitle {
+		width: fit-content;
+		margin: auto;
+		font-size: 1.5rem;
+	}
+	#shareBtnList {
+		display: flex;
+		flex: 1;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.shareBtn {
+		flex: 1;
+	}
+	.shareBtn button {
+		display: block;
+		width: 60px;
+		aspect-ratio: 1 / 1;
+		margin: 0 auto;
+		padding: 0;
+		border: 0;
+		cursor: pointer;
+	}
+	.material-symbols-outlined {
+		font-variation-settings: 'FILL' 0,
+		'wght' 400,
+		'GRAD' 0,
+		'opsz' 24;
+	}
+
+	#title {
+		width: fit-content;
+		height: 40px;
+		margin: var(--bodyMargin) auto 0 auto;
+		padding: 10px 40px;
+		border-radius: 30px;
+		box-shadow: 0 0 25px 0 #b0b0b0;
+		background-color: white;
+		font-size: 2rem;
+		line-height: 40px;
+	}
+	#content {
+		flex: 1;
+		position: relative;
+		width: calc(100% - 40px);
+		margin: var(--bodyMargin) auto 0 auto;
+		padding: 20px;
+		box-shadow: 0 0 25px 0 #b0b0b0;
+		background-color: white;
+	}
+	.content {
+	}
+	#copyright {
+		width: fit-content;
+		height: 20px;
+		margin: 0 auto var(--bodyMargin) auto;
+		padding: 10px 20px;
+		border-radius: 0 0 20px 20px;
+		box-shadow: 0 0 25px 0 #b0b0b0;
+		background-color: white;
+	}
 }
 
-#headerMenuList {
-	list-style: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-#headerMenuList li {
-	margin: 10px;
-	padding: 10px;
-	font-size: 1.5rem;
-}
-#headerMenuList li a {
-	color: white;
-	text-decoration: none;
-} 
-#content {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 800px;
-	height: 100vh;
-	margin: 100px 0 100px 0;
-	padding: 10px;
-	border-radius: 50px;
-	box-shadow: 0 0 25px 0 #b0b0b0;
-	background-color: white;
+@media screen and (min-width: 641px) and (max-width: 1280px) {
+	body {
+		margin: 0 auto;
+	}
+	#headerMenuBox {
+		position: fixed;
+		top: 50%;
+		left: -300px;
+		transform: translate(0, -50%);
+	}
+	#headerMenuToggle {
+		position: absolute;
+		top: 50%;
+		right: -50px;
+		z-index: -1;
+		transform: translate(0, -50%);
+		width: 60px;
+		aspect-ratio: 1/1;
+		border-radius: 0 20px 20px 0;
+
+/* box-shadow: 20px 0 20px 5px #acacac; */
+		background-color: #387bb2;
+	}
+	#headerMenuToggle button {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		aspect-ratio: 1/1;
+		border: none;
+		background-color: transparent;
+	}
+	#headerMenuToggle button span {
+		color: white;
+		font-size: 50px;
+	}
 }
 
-#title {
-	width: fit-content;
-	margin: auto;
-}
-
-#copyright {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translate(0, -50%);
+@media screen and (min-width: 1281px) {
+	#headerMenuToggle {
+		display: none;
+	}
 }
