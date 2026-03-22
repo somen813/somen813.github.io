@@ -1,5 +1,6 @@
 const nowURL = window.location.href;
 const body = document.querySelector('body');
+const main = document.getElementById('main')
 const content = document.getElementById('content');
 
 function initHeader() {
@@ -105,7 +106,7 @@ async function loadingFooter() {
 		try {
 			const responce = await fetch('/settings/footer.html');
 			const data = await responce.text();
-			await body.insertAdjacentHTML('beforeend', data)
+			await main.insertAdjacentHTML('afterend', data)
 			return
 		} catch(error) {
 			retries++;
@@ -116,8 +117,6 @@ async function loadingFooter() {
 		console.log('エラーが3回出たので読み込みを終了します。')
 	}
 }
-
-
 
 loadingHeader();
 loadingFooter();
