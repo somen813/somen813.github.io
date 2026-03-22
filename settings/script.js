@@ -98,12 +98,12 @@ async function loadingHeader() {
 		console.log('エラーが3回出たので読み込みを終了します。')
 	}
 }
-async function loadingCopyright() {
+async function loadingFooter() {
 	let retries = 0;
 	const maxRetries = 3
 	while(retries < maxRetries) {
 		try {
-			const responce = await fetch('/settings/copyright.html');
+			const responce = await fetch('/settings/footer.html');
 			const data = await responce.text();
 			await body.insertAdjacentHTML('beforeend', data)
 			return
@@ -120,4 +120,4 @@ async function loadingCopyright() {
 
 
 loadingHeader();
-loadingCopyright();
+loadingFooter();
