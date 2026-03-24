@@ -1,4 +1,3 @@
-const nowURL = window.location.href;
 const body = document.querySelector('body');
 const main = document.getElementById('main')
 const content = document.getElementById('content');
@@ -8,9 +7,7 @@ function initHeader() {
 	const headerToggle = document.getElementById('headerToggle');
 	const icon_menu = document.getElementById('icon_menu');
 	const icon_close = document.getElementById('icon_close');
-	const shareBtn_copy = document.getElementById('shareBtn_copy');
 	let headerMenuOpen = false;
-
 	function headerMenu_animation(direction) {
 		const keyframes = {
 			transform: ['translate(0, 0)', 'translate(100%, 0)'],
@@ -21,7 +18,7 @@ function initHeader() {
 			fill: 'forwards',
 			direction: direction,
 		};
-		return headerMenu.animate(keyframes, options);
+		headerMenu.animate(keyframes, options);
 	}
 	function headerToggle_animation(direction) {
 		const options = {
@@ -74,11 +71,25 @@ function initHeader() {
 		};
 	});
 
-
+	const shareBtn_x = document.getElementById('shareBtn_x');
+	const shareBtn_line = document.getElementById('shareBtn_line');
+	const shareBtn_copy = document.getElementById('shareBtn_copy');
+	const nowURL = encodeURIComponent(window.location.href);
+	const nowTitle = encodeURIComponent(document.title);
 	function copylink() {
-		navigator.clipboard.writeText(nowURL)
+		navigator.clipboard.writeText(nowURL);
 	}
 	shareBtn_copy.addEventListener('click', copylink);
+	function share_x() {
+		console.log('shareBtn_x');
+		window.open(`https://x.com/intent/tweet?text=${nowTitle}%0a&url=${nowURL}`, '_blank');
+	}
+	function share_line() {
+		console.log('shareBtn_line');
+		window.open(`https://social-plugins.line.me/lineit/share?text=${nowTitle}%0a&url=${nowURL}`)
+	}
+	shareBtn_x.addEventListener('click', share_x);
+	shareBtn_line.addEventListener('click', share_line)
 }
 async function loadingHeader() {
 	let retries = 0;
