@@ -2,7 +2,7 @@
 
 /* フォントのインポート */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=close,keyboard_double_arrow_up,link,menu');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=arrow_outward,close,keyboard_double_arrow_up,link,menu,open_in_new');
 /* .noto-sans-jp-<uniquifier> {
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
