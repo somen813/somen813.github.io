@@ -3,12 +3,6 @@
 /* フォントのインポート */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=arrow_outward,close,keyboard_double_arrow_up,link,menu,open_in_new');
-/* .noto-sans-jp-<uniquifier> {
-  font-family: "Noto Sans JP", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
 .material-symbols-outlined {
 	font-variation-settings: 'FILL' 0,
 	'wght' 400,
@@ -18,491 +12,259 @@
 :root {
 	--siteColor: #387bb2;
 }
-@media screen and (max-width: 480px) {
-	html {
-		font-style: normal;
-		font-weight: 400;
-		font-size: 16px;
-		font-family: 'Noto Sans JP', sans-serif;
 
-		font-optical-sizing: auto;
-	}
+html {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Noto Sans JP', sans-serif;
+
+	font-optical-sizing: auto;
+}
+body {
+	width: 100%;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: #dcdcdc;
+}
+#headerToggle {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 1000;
+	z-index: 2000;
+	width: 50px;
+	aspect-ratio: 1/1;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 30px;
+	background-color: var(--siteColor);
+	color: white;
+}
+#headerToggle span {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 40px;
+}
+#icon_menu {
+	opacity: 1;
+}
+#icon_close {
+	opacity: 0;
+}
+#headerMenu {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: max(-360px, -100vw);
+	z-index: 1000;
+	width: min(340px, calc(100vw - 20px));
+	margin: 0;
+	padding: 60px 10px 10px 10px ;
+	box-shadow: 0 0 20px 5px #b0b0b0;
+	background-color: rgba(56, 123, 178, 0.8);
+	color: white;
+
+	backdrop-filter: blur(8px);
+}
+#headerMenuList {
+	list-style: none;
+	width: 100%;
+	margin: 10px auto 0 auto;
+	padding: 0;
+}
+#headerMenuList li {
+	margin: 10px 0;
+	padding: 0;
+	font-size: 1.5rem;
+}
+#headerMenuList li a {
+	color: white;
+	text-decoration: none;
+}
+#shareBtnBox {
+	width: calc(100% - 60px);
+	margin: 10px auto 0 auto;
+	padding: 10px 30px;
+	border-radius: 25px;
+	background-color: white;
+	color: black;
+}
+#shareBtnTitle {
+	width: fit-content;
+	margin: auto;
+	font-size: 1.5rem;
+}
+#shareBtnList {
+	display: flex;
+	flex: 1;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.shareBtn {
+	flex: 1;
+}
+.shareBtn button {
+	display: block;
+	width: 60px;
+	height: 60px;
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+	border-radius: 30%;
+	cursor: pointer;
+}
+.shareBtn button img {
+	width: 100%;
+	height: 100%;
+}
+#shareBtn_x button {
+	padding: 12px;
+	background-color: black;
+}
+#shareBtn_line button {
+	background-color: transparent;
+}
+#shareBtn_copy button span {
+	font-size: 36px;
+}
+
+#content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+#title {
+	width: fit-content;
+	height: 30px;
+	margin: 10px auto 0 auto;
+	padding: 10px 20px;
+	border-radius: 30px;
+	box-shadow: 0 0 25px 0 #b0b0b0;
+	background-color: white;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 30px;
+}
+#main {
+	flex: 1;
+	position: relative;
+	width: calc(100% - 40px);
+	margin: 10px auto 0 auto;
+	padding: 20px;
+	border-radius: 0;
+	box-shadow: 0 0 25px 0 #b0b0b0;
+	background-color: white;
+}
+
+#copyright {
+	width: fit-content;
+	height: 1rem;
+	margin: 0 auto 10px auto;
+	padding: 10px 20px;
+	border-radius: 0 0 20px 20px;
+	box-shadow: 0 0 25px 0 #b0b0b0;
+	background-color: white;
+	line-height: 1rem;
+}
+
+@media screen and (max-width: 480px) {
 	body {
 		width: 100%;
-		min-height: 100vh;
-		margin: 0;
 		padding: 0;
-		background-color: #dcdcdc;
-	}
-	.material-symbols-outlined {
-		font-variation-settings: 'FILL' 0,
-		'wght' 400,
-		'GRAD' 0,
-		'opsz' 24;
 	}
 	#headerToggle {
-		position: fixed;
-		top: 10px;
-		left: 10px;
-		z-index: 1000;
-		z-index: 2000;
 		width: 50px;
-		aspect-ratio: 1/1;
-		margin: 0;
-		padding: 0;
-		border: none;
-		border-radius: 30px;
-		background-color: var(--siteColor);
-		color: white;
 	}
 	#headerToggle span {
-		display: block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
 		font-size: 40px;
 	}
-	#icon_menu {
-		opacity: 1;
-	}
-	#icon_close {
-		opacity: 0;
-	}
 	#headerMenu {
-		display: flex;
-		flex-direction: column;
-		position: fixed;
-		top: 0;
-		bottom: 0;
 		left: max(-360px, -100vw);
-		z-index: 1000;
 		width: min(340px, calc(100vw - 20px));
-		margin: 0;
 		padding: 60px 10px 10px 10px ;
-		box-shadow: 0 0 20px 5px #b0b0b0;
-		background-color: rgba(56, 123, 178, 0.8);
-		color: white;
 
 		backdrop-filter: blur(8px);
 	}
-	#headerMenuList {
-		list-style: none;
-		width: 100%;
-		margin: 10px auto 0 auto;
-		padding: 0;
-	}
-	#headerMenuList li {
-		margin: 10px 0;
-		padding: 0;
-		font-size: 1.5rem;
-	}
-	#headerMenuList li a {
-		color: white;
-		text-decoration: none;
-	}
-	#shareBtnBox {
-		width: calc(100% - 60px);
-		margin: 10px auto 0 auto;
-		padding: 10px 30px;
-		border-radius: 25px;
-		background-color: white;
-		color: black;
-	}
-	#shareBtnTitle {
-		width: fit-content;
-		margin: auto;
-		font-size: 1.5rem;
-	}
-	#shareBtnList {
-		display: flex;
-		flex: 1;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	.shareBtn {
-		flex: 1;
-	}
-	.shareBtn button {
-		display: block;
-		width: 60px;
-		height: 60px;
-		margin: 0 auto;
-		padding: 0;
-		border: 0;
-		border-radius: 30%;
-		cursor: pointer;
-	}
-	.shareBtn button img {
-		width: 100%;
-		height: 100%;
-	}
-	#shareBtn_x button {
-		padding: 12px;
-		background-color: black;
-	}
-	#shareBtn_line button {
-		background-color: transparent;
-	}
-	#shareBtn_copy button span {
-		font-size: 36px;
-	}
 
 	#content {
-		display: flex;
-		flex-direction: column;
 		width: 100%;
-		min-height: 100vh;
+		margin: 0;
 	}
 	#title {
-		width: fit-content;
-		height: 30px;
-		margin: 10px auto 0 auto;
 		padding: 10px 20px;
-		border-radius: 30px;
-		box-shadow: 0 0 25px 0 #b0b0b0;
-		background-color: white;
-		font-weight: bold;
-		font-size: 30px;
-		line-height: 30px;
 	}
 	#main {
-		flex: 1;
-		position: relative;
-		width: calc(100% - 40px);
-		margin: 10px auto 0 auto;
-		padding: 20px;
-		box-shadow: 0 0 25px 0 #b0b0b0;
-		background-color: white;
-	}
-	#copyright {
-		width: fit-content;
-		height: 1rem;
-		margin: 0 auto 10px auto;
-		padding: 10px 20px;
-		border-radius: 0 0 20px 20px;
-		box-shadow: 0 0 25px 0 #b0b0b0;
-		background-color: white;
-		line-height: 1rem;
+		border-radius: 0;
 	}
 }
 
 @media screen and (min-width: 481px) and (max-width: 960px) {
-	html {
-		font-style: normal;
-		font-weight: 400;
-		font-size: 16px;
-		font-family: 'Noto Sans JP', sans-serif;
-
-		font-optical-sizing: auto;
-	}
 	body {
 		width: 100%;
-		min-height: 100vh;
-		margin: 0;
 		padding: 0 10px;
-		background-color: #dcdcdc;
-	}
-	.material-symbols-outlined {
-		font-variation-settings: 'FILL' 0,
-		'wght' 400,
-		'GRAD' 0,
-		'opsz' 24;
 	}
 	#headerToggle {
-		position: fixed;
-		top: 10px;
-		left: 10px;
-		z-index: 1000;
-		z-index: 2000;
 		width: 60px;
-		aspect-ratio: 1/1;
-		margin: 0;
-		padding: 0;
-		border: none;
-		border-radius: 30px;
-		background-color: var(--siteColor);
-		color: white;
 	}
 	#headerToggle span {
-		display: block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
 		font-size: 45px;
 	}
-	#icon_menu {
-		opacity: 1;
-	}
-	#icon_close {
-		opacity: 0;
-	}
 	#headerMenu {
-		display: flex;
-		flex-direction: column;
-		position: fixed;
-		top: 0;
-		bottom: 0;
 		left: -360px;
-		z-index: 1000;
 		width: 340px;
-		margin: 0;
 		padding: 70px 10px 10px 10px ;
-		box-shadow: 0 0 20px 5px #b0b0b0;
-		background-color: rgba(56, 123, 178, 0.8);
-		color: white;
 
 		backdrop-filter: blur(8px);
 	}
-	#headerMenuList {
-		list-style: none;
-		width: 100%;
-		margin: 10px auto 0 auto;
-		padding: 0;
-	}
-	#headerMenuList li {
-		margin: 10px 0;
-		padding: 0;
-		font-size: 1.5rem;
-	}
-	#headerMenuList li a {
-		color: white;
-		text-decoration: none;
-	}
-	#shareBtnBox {
-		width: calc(100% - 60px);
-		margin: 10px auto 0 auto;
-		padding: 10px 30px;
-		border-radius: 25px;
-		background-color: white;
-		color: black;
-	}
-	#shareBtnTitle {
-		width: fit-content;
-		margin: auto;
-		font-size: 1.5rem;
-	}
-	#shareBtnList {
-		display: flex;
-		flex: 1;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	.shareBtn {
-		flex: 1;
-	}
-	.shareBtn button {
-		display: block;
-		width: 60px;
-		height: 60px;
-		margin: 0 auto;
-		padding: 0;
-		border: 0;
-		border-radius: 30%;
-		cursor: pointer;
-	}
-	.shareBtn button img {
-		width: 100%;
-		height: 100%;
-	}
-	#shareBtn_x button {
-		padding: 12px;
-		background-color: black;
-	}
-	#shareBtn_line button {
-		background-color: transparent;
-	}
-	#shareBtn_copy button span {
-		font-size: 36px;
-	}
 
 	#content {
-		display: flex;
-		flex-direction: column;
 		width: min(800px, 100%);
-		min-height: 100vh;
 		margin: 0 auto;
 	}
 	#title {
-		width: fit-content;
-		height: 30px;
-		margin: 10px auto 0 auto;
 		padding: 15px 40px;
-		border-radius: 30px;
-		box-shadow: 0 0 25px 0 #b0b0b0;
-		background-color: white;
-		font-weight: bold;
-		font-size: 30px;
-		line-height: 30px;
 	}
 	#main {
-		flex: 1;
-		position: relative;
-		width: calc(100% - 40px);
-		margin: 10px auto 0 auto;
-		padding: 20px;
 		border-radius: 30px;
-		box-shadow: 0 0 25px 0 #b0b0b0;
-		background-color: white;
-	}
-	#copyright {
-		width: fit-content;
-		height: 1rem;
-		margin: 0 auto 10px auto;
-		padding: 10px 20px;
-		border-radius: 0 0 20px 20px;
-		box-shadow: 0 0 25px 0 #b0b0b0;
-		background-color: white;
-		line-height: 1rem;
 	}
 }
 
 @media screen and (min-width: 961px) {
-	html {
-		font-style: normal;
-		font-weight: 400;
-		font-size: 16px;
-		font-family: 'Noto Sans JP', sans-serif;
-
-		font-optical-sizing: auto;
-	}
 	body {
 		width: calc(100% - 420px);
-		min-height: 100vh;
-		margin: 0;
 		padding: 0 20px 0 400px;
-		background-color: #dcdcdc;
-	}
-	.material-symbols-outlined {
-		font-variation-settings: 'FILL' 0,
-		'wght' 400,
-		'GRAD' 0,
-		'opsz' 24;
 	}
 	#headerToggle {
 		display: none;
 	}
 	#headerMenu {
-		display: flex;
-		flex-direction: column;
-		position: fixed;
-		top: 0;
-		bottom: 0;
 		left: 0;
-		z-index: 1000;
 		width: 340px;
-		margin: 0;
 		padding: 0 20px;
-		box-shadow: 0 0 20px 5px #b0b0b0;
-		background-color: rgba(56, 123, 178, 0.8);
-		color: white;
 
 		backdrop-filter: blur(8px);
 	}
-	#headerMenuList {
-		list-style: none;
-		width: 100%;
-		margin: 10px auto 0 auto;
-		padding: 0;
-	}
-	#headerMenuList li {
-		margin: 10px 0;
-		padding: 0;
-		font-size: 1.5rem;
-	}
-	#headerMenuList li a {
-		color: white;
-		text-decoration: none;
-	}
-	#shareBtnBox {
-		width: calc(100% - 60px);
-		margin: 10px auto 0 auto;
-		padding: 10px 30px;
-		border-radius: 25px;
-		background-color: white;
-		color: black;
-	}
-	#shareBtnTitle {
-		width: fit-content;
-		margin: auto;
-		font-size: 1.5rem;
-	}
-	#shareBtnList {
-		display: flex;
-		flex: 1;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	.shareBtn {
-		flex: 1;
-	}
-	.shareBtn button {
-		display: block;
-		width: 60px;
-		height: 60px;
-		margin: 0 auto;
-		padding: 0;
-		border: 0;
-		border-radius: 30%;
-		cursor: pointer;
-	}
-	.shareBtn button img {
-		width: 100%;
-		height: 100%;
-	}
-	#shareBtn_x button {
-		padding: 12px;
-		background-color: black;
-	}
-	#shareBtn_line button {
-		background-color: transparent;
-	}
-	#shareBtn_copy button span {
-		font-size: 36px;
-	}
 
 	#content {
-		display: flex;
-		flex-direction: column;
 		width: min(800px, 100%);
-		min-height: 100vh;
 		margin: 0 auto;
-		padding: 0;
 	}
 	#title {
-		width: fit-content;
-		height: 30px;
-		margin: 10px auto 0 auto;
 		padding: 15px 40px;
-		border-radius: 30px;
-		box-shadow: 0 0 25px 0 #b0b0b0;
-		background-color: white;
-		font-weight: bold;
-		font-size: 30px;
-		line-height: 30px;
 	}
 	#main {
-		flex: 1;
-		position: relative;
-		width: calc(100% - 40px);
-		margin: 10px 0 0 0;
-		padding: 20px;
 		border-radius: 30px;
-		box-shadow: 0 0 25px 0 #b0b0b0;
-		background-color: white;
-	}
-	#copyright {
-		width: fit-content;
-		height: 1rem;
-		margin: 0 auto 10px auto;
-		padding: 10px 20px;
-		border-radius: 0 0 20px 20px;
-		box-shadow: 0 0 25px 0 #b0b0b0;
-		background-color: white;
-		line-height: 1rem;
 	}
 }
