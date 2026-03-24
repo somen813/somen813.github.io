@@ -28,9 +28,6 @@
 		font-optical-sizing: auto;
 	}
 	body {
-		display: flex;
-		flex-direction: column;
-		position: relative;
 		width: 100%;
 		min-height: 100vh;
 		margin: 0;
@@ -152,6 +149,12 @@
 		font-size: 36px;
 	}
 
+	#content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		min-height: 100vh;
+	}
 	#title {
 		width: fit-content;
 		height: 30px;
@@ -195,13 +198,10 @@
 		font-optical-sizing: auto;
 	}
 	body {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		width: min(100%, 800px);
+		width: 100%;
 		min-height: 100vh;
-		margin: auto;
-		padding: 0;
+		margin: 0;
+		padding: 0 10px;
 		background-color: #dcdcdc;
 	}
 	.material-symbols-outlined {
@@ -319,6 +319,13 @@
 		font-size: 36px;
 	}
 
+	#content {
+		display: flex;
+		flex-direction: column;
+		width: min(800px, 100%);
+		min-height: 100vh;
+		margin: 0 auto;
+	}
 	#title {
 		width: fit-content;
 		height: 30px;
@@ -364,7 +371,7 @@
 	}
 	body {
 		width: calc(100% - 420px);
-		height: 100vh;
+		min-height: 100vh;
 		margin: 0;
 		padding: 0 20px 0 400px;
 		background-color: #dcdcdc;
