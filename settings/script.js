@@ -11,6 +11,7 @@ function initHeader() {
 	function headerMenu_animation(direction) {
 		const keyframes = {
 			transform: ['translate(0, 0)', 'translate(100%, 0)'],
+			boxShadow: ['none','0 0 20px 5px #b0b0b0']
 		};
 		const options = {
 			duration: 250,
