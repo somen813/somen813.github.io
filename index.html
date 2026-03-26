@@ -4,20 +4,63 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>somen</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js"></script>
+	<meta name="description" content="somenのホームページ。引きこもり高校生が運営してます。そうめんの部屋っていうブログも存在します。"> 
+	<!--アイコン-->
+	<link rel="icon" href="/settings/icon_32.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="/settings/icon_192.png" sizes="192x192" type="image/png">
+	<link rel="apple-touch-icon-precomposed" href="/settings/icon_150.png" type="image/png">
+	<!-- css -->
+	<link rel="stylesheet" href="/settings/style.css">
+	<style>
+.oshi_list {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.oshi_name {
+	margin: 0;
+	font-size: 1.2rem;
+}
+	</style>
+	<!-- js -->
+	<script src="/settings/script.js" defer></script>
 </head>
 <body>
-	<div id="headerMenu">
-		<ul class="headerMenuList">
-			<li>Top</li>
-			<li>Who</li>
-			<li>Contact</li>
-		</ul>
-	</div>
 	<div id="content">
-		<h1 id="title">somen</h1>
-		<p id="copyRight">© somen</p>
+		<p id="title">TOP</p>
+		<div id="main">
+			<h1>somen</h1>
+			<h2>SNS等</h2>
+			<ul>
+				<li>X→<a href="https://x.com/somen813/">somen813</a></li>
+				<li>Github→<a href="https://github.com/somen813">somen813</a></li>
+				<li>Blueky(低浮上)→<a href="https://bsky.app/profile/somen813.bsky.social">somen813</a></li>
+			</ul>
+			<h2>どんな人？</h2>
+			<p>基本的に家に籠もっている高校生です</p>
+			<p>家で何をしてるか？お察しください</p>
+			<h2>推し</h2>
+			<ul class="oshi_list">
+				<li>
+					<p class="oshi_name">風真いろは</p>
+					<p>かっこかわいい</p>
+					<img src="Kazama-Iroha.png" alt="風真いろはの立ち絵">
+					<p></p>
+				</li>
+				<li>
+					<p class="oshi_name">小鈎ハレ</p>
+					<p>好き。たぶん向こうも好きです</p>
+					<img src="Omagari-Hare.png" alt="小鈎ハレの立ち絵">
+				</li>
+			</ul>
+			<h2>好きなゲーム</h2>
+			<ul>
+				<li>崩壊スターレイル<a href="https://hsr.hoyoverse.com/ja-jp/home">公式サイト</a></li>
+				<li>アークナイツエンドフィールド<a href="https://endfield.gryphline.com/ja-jp">公式サイト</a></li>
+				<li>ブルーアーカイブ<a href="https://bluearchive.jp/">公式サイト</a></li>
+			</ul>
+		</div>
 	</div>
 </body>
 </html>
